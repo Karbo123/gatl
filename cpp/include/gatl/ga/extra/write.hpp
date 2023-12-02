@@ -162,7 +162,8 @@ namespace ga {
                     }
                 }
                 else {
-                    os << c<0>;
+                    // os << c<0>;
+                    os << "<0>";
                 }
                 os << "]";
                 std::advance(map_citr, 1);
