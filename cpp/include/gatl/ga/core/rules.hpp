@@ -60,7 +60,7 @@ namespace ga {
             using type = std::conditional_t<
                 Rule::template condition<Arguments...>::value,
                 Rule,
-                nullptr_t // It should be impossible to reach this case
+                std::nullptr_t // It should be impossible to reach this case
             >;
         };
 

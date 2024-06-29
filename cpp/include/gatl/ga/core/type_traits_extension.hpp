@@ -45,15 +45,15 @@ namespace ga {
         constexpr bool is_iterator_v = is_iterator<T>::value;
 
         // Helper function to convert a tuple into a list-initialization structure.
-        template<typename Tuple, std::size_t... Indices>
-        GA_ALWAYS_INLINE constexpr decltype(auto) _to_list_initialization(Tuple &&tuple, std::index_sequence<Indices...>) GA_NOEXCEPT {
-            return { std::get<Indices>(std::move(tuple))... };
-        }
+        // template<typename Tuple, std::size_t... Indices>
+        // GA_ALWAYS_INLINE constexpr decltype(auto) _to_list_initialization(Tuple &&tuple, std::index_sequence<Indices...>) GA_NOEXCEPT {
+        //     return { std::get<Indices>(std::move(tuple))... };
+        // }
 
-        template<typename Tuple>
-        GA_ALWAYS_INLINE constexpr decltype(auto) to_list_initialization(Tuple &&tuple) GA_NOEXCEPT {
-            return _to_list_initialization(std::move(tuple), std::make_index_sequence<std::tuple_size_v<std::remove_cv_t<std::remove_reference_t<Tuple> > > >{});
-        }
+        // template<typename Tuple>
+        // GA_ALWAYS_INLINE constexpr decltype(auto) to_list_initialization(Tuple &&tuple) GA_NOEXCEPT {
+        //     return _to_list_initialization(std::move(tuple), std::make_index_sequence<std::tuple_size_v<std::remove_cv_t<std::remove_reference_t<Tuple> > > >{});
+        // }
 
     }
 
